@@ -1,6 +1,7 @@
 // General Imports
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import {KEY} from "./localKey"
 
 // Pages Imports
 import HomePage from "./pages/HomePage/HomePage";
@@ -17,6 +18,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 function App() {
   return (
     <div>
+      <p>{KEY}</p>
       <Navbar />
       <Routes>
         <Route
