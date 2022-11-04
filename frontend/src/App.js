@@ -14,8 +14,12 @@ import Footer from "./components/Footer/Footer";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
+import { useState } from "react";
 
 function App() {
+  const [videos, setVideos] = useState([]);
+  const [filterVideos, setFilteredVideos] = useState('Rihanna')
+  
   return (
     <div>
       <Navbar />
