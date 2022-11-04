@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-let defaultSearch = {
+let searchValues = {
     q: '',
 }
 
