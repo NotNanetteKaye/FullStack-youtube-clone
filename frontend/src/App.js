@@ -347,8 +347,8 @@ function App() {
         }
     }
 ]);
-  const [filterVideos, setFilteredVideos] = useState('Rihanna')
   const [currentVideo, setCurrentVideo] = useState(videos[0])
+
   return (
     <div>
       <Navbar />
