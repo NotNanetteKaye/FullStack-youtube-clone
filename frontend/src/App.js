@@ -12,6 +12,7 @@ import PublicYoutubePage from "./pages/PublicYoutubePage/PublicYoutubePage";
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
@@ -353,6 +354,7 @@ function App() {
   return (
     <div>
       <Navbar />
+      <SearchBar placeholder = {'Enter video name...'} handleChange={(e) => console.log(e.target.value)}/>
       <Routes>
         <Route
           path="/"
@@ -362,7 +364,7 @@ function App() {
             </PrivateRoute>
           }
         />
-        <Route exact path="/" element={<PublicYoutubePage currentVideo = {currentVideo}/>} />
+        <Route exact path="/PublicHomePage" element={<PublicYoutubePage currentVideo = {currentVideo}/>} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
