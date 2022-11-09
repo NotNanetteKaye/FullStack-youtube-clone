@@ -4,9 +4,10 @@ import "./App.css";
 import {KEY} from "./localKey"
 
 // Pages Imports
-import HomePage from "./pages/HomePage/HomePage";
+import HomePage from "./pages/CarHomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import PublicYoutubePage from "./pages/PublicYoutubePage/PublicYoutubePage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -352,7 +353,6 @@ function App() {
   return (
     <div>
       <Navbar />
-        {currentVideo.snippet.title}
       <Routes>
         <Route
           path="/"
@@ -362,6 +362,7 @@ function App() {
             </PrivateRoute>
           }
         />
+        <Route exact path="/" element={<PublicYoutubePage currentVideo = {currentVideo}/>} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
