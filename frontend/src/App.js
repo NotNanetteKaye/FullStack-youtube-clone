@@ -354,7 +354,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      <SearchBar placeholder = {'Enter video name...'} handleChange={(e) => console.log(e.target.value)}/>
+      {/* <SearchBar placeholder = {'Enter video name...'} handleChange={(e) => console.log(e.target.value)}/> */}
       <Routes>
         <Route
           path="/"
