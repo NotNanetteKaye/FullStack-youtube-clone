@@ -226,34 +226,6 @@ function App() {
     },
     {
         "kind": "youtube#searchResult",
-        "etag": "pVrRqA3vh2iiIhGCv9WqK495uEM",
-        "id": {
-            "kind": "youtube#channel",
-            "channelId": "UC2xskkQVFEpLcGFnNSLQY0A"
-        },
-        "snippet": {
-            "publishedAt": "2009-05-12T05:29:11Z",
-            "channelId": "UC2xskkQVFEpLcGFnNSLQY0A",
-            "title": "RihannaVEVO",
-            "description": "Rihanna on Vevo - Official Music Videos, Live Performances, Interviews and more...",
-            "thumbnails": {
-                "default": {
-                    "url": "https://yt3.ggpht.com/D2Xqu_J-r4l3fIvNylv09MEtx6Kx_0lps3c6KMUdXCYOzzuhIAmbovR3qaKLCJc4RYWMQtuwlSk=s88-c-k-c0xffffffff-no-rj-mo"
-                },
-                "medium": {
-                    "url": "https://yt3.ggpht.com/D2Xqu_J-r4l3fIvNylv09MEtx6Kx_0lps3c6KMUdXCYOzzuhIAmbovR3qaKLCJc4RYWMQtuwlSk=s240-c-k-c0xffffffff-no-rj-mo"
-                },
-                "high": {
-                    "url": "https://yt3.ggpht.com/D2Xqu_J-r4l3fIvNylv09MEtx6Kx_0lps3c6KMUdXCYOzzuhIAmbovR3qaKLCJc4RYWMQtuwlSk=s800-c-k-c0xffffffff-no-rj-mo"
-                }
-            },
-            "channelTitle": "RihannaVEVO",
-            "liveBroadcastContent": "upcoming",
-            "publishTime": "2009-05-12T05:29:11Z"
-        }
-    },
-    {
-        "kind": "youtube#searchResult",
         "etag": "SCinfkVt-2_woDKzZO2spKmWtY8",
         "id": {
             "kind": "youtube#video",
@@ -320,36 +292,8 @@ function App() {
             "publishTime": "2011-10-20T04:00:00Z"
         }
     },
-    {
-        "kind": "youtube#searchResult",
-        "etag": "izfCZgkXICYCIfr-aa5F2BnqVYE",
-        "id": {
-            "kind": "youtube#channel",
-            "channelId": "UCcgqSM4YEo5vVQpqwN-MaNw"
-        },
-        "snippet": {
-            "publishedAt": "2005-11-06T16:14:28Z",
-            "channelId": "UCcgqSM4YEo5vVQpqwN-MaNw",
-            "title": "Rihanna",
-            "description": "It's hard to believe that Rihanna is only 30 years old. Yet within the 10 years since the start of her musical career, she's become ...",
-            "thumbnails": {
-                "default": {
-                    "url": "https://yt3.ggpht.com/YU2mwJNyBinBPRQRE4hLHK5zqb1ze5BgrdlFQSINRcYB3Ob-RgZiPWt_jGn8SuYEwovtWT5IB_s=s88-c-k-c0xffffffff-no-rj-mo"
-                },
-                "medium": {
-                    "url": "https://yt3.ggpht.com/YU2mwJNyBinBPRQRE4hLHK5zqb1ze5BgrdlFQSINRcYB3Ob-RgZiPWt_jGn8SuYEwovtWT5IB_s=s240-c-k-c0xffffffff-no-rj-mo"
-                },
-                "high": {
-                    "url": "https://yt3.ggpht.com/YU2mwJNyBinBPRQRE4hLHK5zqb1ze5BgrdlFQSINRcYB3Ob-RgZiPWt_jGn8SuYEwovtWT5IB_s=s800-c-k-c0xffffffff-no-rj-mo"
-                }
-            },
-            "channelTitle": "Rihanna",
-            "liveBroadcastContent": "upcoming",
-            "publishTime": "2005-11-06T16:14:28Z"
-        }
-    }
 ]);
-  const [currentVideoID, setCurrentVideo] = useState('WPiEbYSF9kE')
+  const [currentVideoID, setCurrentVideoID] = useState('WPiEbYSF9kE')
 
   return (
     <div>
