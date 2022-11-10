@@ -349,7 +349,7 @@ function App() {
         }
     }
 ]);
-  const [currentVideo, setCurrentVideo] = useState(videos[0])
+  const [currentVideoID, setCurrentVideo] = useState('WPiEbYSF9kE')
 
   return (
     <div>
@@ -364,7 +364,7 @@ function App() {
             </PrivateRoute>
           }
         />
-        <Route exact path="/PublicHomePage" element={<PublicYoutubePage currentVideo = {currentVideo}/>} />
+        <Route exact path="/PublicHomePage" element={<PublicYoutubePage currentVideoID = {currentVideoID}/>} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
