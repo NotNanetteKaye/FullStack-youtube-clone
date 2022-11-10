@@ -1,9 +1,10 @@
 import React from "react";
+import VideoPresenter from "../VideoPresenter/VideoPresenter";
 
 const VideoMapper = ({videoArray}) => {
     return ( 
         <ul>
-            {videoArray.map(e => <li>{e.snippet.title}</li>)}
+            {videoArray.map(e => <VideoPresenter key={e.id.videoId} video={e}/>)}
         </ul>
     );
 }
