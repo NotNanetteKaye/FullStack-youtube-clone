@@ -12,7 +12,7 @@ import PublicYoutubePage from "./pages/PublicYoutubePage/PublicYoutubePage";
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-import SearchBar from "./components/SearchBar/SearchBar";
+import VideoMapper from "./components/VideoMapper/VideoMapper";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
@@ -354,7 +354,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      {/* <SearchBar placeholder = {'Enter video name...'} handleChange={(e) => console.log(e.target.value)}/> */}
+      <VideoMapper videoArray={videos}/>
       <Routes>
         <Route
           path="/"
