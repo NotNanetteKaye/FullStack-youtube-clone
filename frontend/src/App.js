@@ -11,7 +11,7 @@ import PublicYoutubePage from "./pages/PublicYoutubePage/PublicYoutubePage";
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-import VideoMapper from "./components/VideoMapper/VideoMapper";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
@@ -297,7 +297,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      <VideoMapper videoArray={videos}/>
+      <SearchBar YoutubeData={videos}/>
       <Routes>
         <Route
           path="/"

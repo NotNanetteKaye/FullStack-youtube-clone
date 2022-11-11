@@ -1,14 +1,15 @@
 import React from 'react';
+import './SearchBar.css'
 
-const SearchBar = ({placeholder, handleChange}) => {
+const SearchBar = ({YoutubeData}) => {
     return(
-        <div>
+        <div className='search'>
             <h3>Search for Videos</h3>
-            <input type='search'
-            className = 'search'
-            placeholder = {placeholder}
-            onChange= {handleChange}
-            />
+            <div className='searchInputs'>
+                <input type='text' placeholder='Enter video here...'/>
+                <div className='searchIcon'></div>
+            </div>
+            <div className='youtubeResults'></div>
         </div>
     )
 }

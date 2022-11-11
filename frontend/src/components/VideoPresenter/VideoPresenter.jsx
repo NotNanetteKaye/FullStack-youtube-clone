@@ -10,12 +10,13 @@ width: 600px;
 padding: 1rem;
 display: grid;
 place-content: center;
+justify-items: center;
 `
 const VideoPresenter = ({video}) => {
     return ( 
     <Panel style={{backgroundColor: `${colorArray[Math.floor(Math.random()*colorArray.length)]}`}}>
         <img src={video.snippet.thumbnails.high.url} height={video.snippet.thumbnails.high.height} width={video.snippet.thumbnails.high.width} alt=''/>
-        <h3>{video.snippet.title}</h3>
+        <h5>{video.snippet.title} </h5>
     </Panel>
     );
 }

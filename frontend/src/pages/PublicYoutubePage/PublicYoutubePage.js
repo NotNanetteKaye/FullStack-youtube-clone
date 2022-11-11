@@ -1,10 +1,11 @@
 import React from 'react';
 
+
 const PublicYoutubePage = ({currentVideoID}) => {
     return (
         <div>
-            <button>Get Video</button>
-            <iframe
+            {/* <button>Get Video</button> */}
+            {/* <iframe
                 title='default-player'
                 id='player'
                 type='text/html'
@@ -12,7 +13,7 @@ const PublicYoutubePage = ({currentVideoID}) => {
                 height='390'
                 src={`http://www.youtube.com/embed/${currentVideoID}?enablejsapi=1&origin=http://example.com`}
                 frameBorder='0'
-            ></iframe>
+            ></iframe> */}
         </div>
     )
 
