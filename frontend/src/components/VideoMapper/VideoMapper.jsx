@@ -7,10 +7,10 @@ display: flex;
 flex-wrap: wrap;
 `
 
-const VideoMapper = ({videoArray}) => {
+const VideoMapper = ({searchResults}) => {
     return ( 
         <FlexContainer>
-            {videoArray.map(e => <VideoPresenter key={e.id.videoId} video={e}/>)}
+                {searchResults.map(e => <VideoPresenter key={e.id.videoId} video={e}/>)}
         </FlexContainer>
     );
 }
