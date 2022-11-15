@@ -323,6 +323,17 @@ function App() {
     }
   };
 
+  const GetRelatedVideos = async () => {
+    try {
+      let response = await axios.get(
+        `https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${currentVideoID}&type=video&key=${API_KEY}`
+      );
+      setSearchResults(response.data.items);
+    } catch (error) {
+      console.log(error.response.data);
+    }
+  };
+
   return (
     <div>
       <Navbar />
