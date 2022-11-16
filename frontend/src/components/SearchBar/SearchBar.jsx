@@ -7,6 +7,22 @@ import axios from 'axios';
 
 const SearchBar = ({inputHandler, GetResults, inputText}) => {
 
+    return(
+        <div className='search'>
+            <div className='searchInputs'>
+                <input type='text' value={inputText} placeholder='Search for videos here...' onChange={inputHandler}/>
+                <button onClick={() => {GetResults()}}>Search here!</button>
+            </div>
+            <div className='youtubeResults'>
+            </div>
+        </div>
+    )
+}
+
+export default SearchBar
+
+
+
     // const [inputText, setInputText] =useState('');
     // const [searchResults, setSearchResults] = useState([]); 
 
@@ -23,20 +39,3 @@ const SearchBar = ({inputHandler, GetResults, inputText}) => {
     //         console.log(error.response.data);
     //       }
     // } 
-
-
-    return(
-        <div className='search'>
-            <div className='searchInputs'>
-                <input type='text' value={inputText} placeholder='Search for videos here...' onChange={inputHandler}/>
-            </div>
-            <div>
-                <button onClick={() => {GetResults()}}>Search here!</button>
-            </div>
-            <div className='youtubeResults'>
-            </div>
-        </div>
-    )
-}
-
-export default SearchBar

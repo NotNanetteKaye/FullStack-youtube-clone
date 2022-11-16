@@ -304,7 +304,7 @@ function App() {
     },
   ]);
   const [currentVideoID, setCurrentVideoID] = useState("WPiEbYSF9kE");
-  const [inputText, setInputText] = useState("");
+  const [inputText, setInputText] = useState("WPiEbYSF9kE");
   const [searchResults, setSearchResults] = useState([]);
 
   let inputHandler = (e) => {
@@ -349,7 +349,7 @@ function App() {
         <Route
           exact
           path="/PublicHomePage"
-          element={<PublicYoutubePage currentVideoID={currentVideoID} />}
+          element={<PublicYoutubePage/>}
         />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
