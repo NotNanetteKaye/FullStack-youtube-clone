@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const colorArray = [
@@ -12,9 +13,13 @@ display: grid;
 place-content: center;
 justify-items: center;
 `
+const navigateToVideoPage = () => {
+    navigateToVideoPage('/VideoPage')
+}
+
 const VideoPresenter = ({video}) => {
     return ( 
-    <Panel style={{backgroundColor: `${colorArray[Math.floor(Math.random()*colorArray.length)]}`}}>
+    <Panel style={{backgroundColor: `${colorArray[Math.floor(Math.random()*colorArray.length)]}`}} onClick={navigateToVideoPage}>
         <img src={video.snippet.thumbnails.high.url} height={video.snippet.thumbnails.high.height} width={video.snippet.thumbnails.high.width} alt=''/>
         <h5>{video.snippet.title} </h5>
     </Panel>
