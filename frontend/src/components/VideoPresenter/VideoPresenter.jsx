@@ -16,13 +16,12 @@ justify-items: center;
 `
 
 const navigateToVideoPage = () => {
-    navigateToVideoPage('/VideoPage')
 }
 
 const VideoPresenter = ({video}) => {
     return ( 
     <Panel style={{backgroundColor: `${colorArray[Math.floor(Math.random()*colorArray.length)]}`}}>
-        <button className="videotitle">
+        <button className="videotitle" onClick={navigateToVideoPage()}>
             <img src={video.snippet.thumbnails.high.url} height={video.snippet.thumbnails.high.height} width={video.snippet.thumbnails.high.width} alt=''/>
             <h5>{video.snippet.title} </h5>
         </button>
