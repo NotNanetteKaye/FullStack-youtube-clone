@@ -23,14 +23,15 @@ button {
   color: rgb(199, 98, 160);
   font-size: 1rem;
   font-family: inherit;
-  max-width: 100px;
+  max-width: 400px;
   padding: 0.5rem 0.5rem;
 }
 
 button:hover {
   cursor: pointer;
-  color: white;
+  color: rgb(0, 0, 0);
   background-color: rgb(206, 138, 180);
+  max-width: 1000px;
 }
 
 .container {

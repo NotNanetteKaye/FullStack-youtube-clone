@@ -1,5 +1,5 @@
 // General Imports
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import { API_KEY } from "./API_KEYS/API_KEY1";
 import axios from "axios";
@@ -8,7 +8,7 @@ import axios from "axios";
 import HomePage from "./pages/CarHomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
-import PublicYoutubePage from "./pages/PublicYoutubePage/PublicYoutubePage";
+import VideoPage from "./pages/VideoPage/VideoPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -21,7 +21,9 @@ import { useState } from "react";
 import VideoMapper from "./components/VideoMapper/VideoMapper";
 
 function App() {
-  const [videos, setVideos] = useState([
+  const [currentVideoID, setCurrentVideoID] = useState("WPiEbYSF9kE");
+  const [inputText, setInputText] = useState("WPiEbYSF9kE");
+  const [searchResults, setSearchResults] = useState([
     {
       kind: "youtube#searchResult",
       etag: "AhhPA2Ngt9utm2bZyBu_IA7jzfs",
@@ -303,9 +305,6 @@ function App() {
       },
     },
   ]);
-  const [currentVideoID, setCurrentVideoID] = useState("WPiEbYSF9kE");
-  const [inputText, setInputText] = useState("WPiEbYSF9kE");
-  const [searchResults, setSearchResults] = useState([]);
 
   let inputHandler = (e) => {
     const lowerCase = e.target.value.toLowerCase();
@@ -337,6 +336,9 @@ function App() {
   return (
     <div>
       <Navbar />
+
+      <Link to={`/localhost:3000/${currentVideoID}`}></Link>
+
       <Routes>
         <Route
           path="/"
@@ -346,11 +348,7 @@ function App() {
             </PrivateRoute>
           }
         />
-        <Route
-          exact
-          path="/PublicHomePage"
-          element={<PublicYoutubePage/>}
-        />
+        <Route path="localhost:3000/:videoId/" element={<VideoPage/>} currentVideoID={currentVideoID}/>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>

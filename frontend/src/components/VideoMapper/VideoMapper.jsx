@@ -1,6 +1,7 @@
-import React from "react";
+import React from 'react';
 import VideoPresenter from "../VideoPresenter/VideoPresenter";
 import styled from "styled-components";
+
 
 const FlexContainer = styled.ul`
 display: flex;
