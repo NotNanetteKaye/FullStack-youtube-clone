@@ -335,9 +335,11 @@ function App() {
 
   return (
     <div>
-      <Navbar />
-
-      <Link to={`/localhost:3000/${currentVideoID}`}></Link>
+      <Navbar/>
+      <SearchBar GetResults={GetResults} inputHandler={inputHandler} inputText={inputText}/>
+      <Link to={`/${currentVideoID}`}>
+        <VideoMapper searchResults={searchResults} />
+      </Link>
 
       <Routes>
         <Route
@@ -348,12 +350,10 @@ function App() {
             </PrivateRoute>
           }
         />
-        <Route path="localhost:3000/:videoId/" element={<VideoPage/>} currentVideoID={currentVideoID}/>
+        <Route path="/:videoId/" element={<VideoPage/>} GetRelatedVideos={GetRelatedVideos}/>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
-      <SearchBar GetResults={GetResults} inputHandler={inputHandler} inputText={inputText}/>
-      <VideoMapper searchResults={searchResults} />
       <Footer />
     </div>
   );
