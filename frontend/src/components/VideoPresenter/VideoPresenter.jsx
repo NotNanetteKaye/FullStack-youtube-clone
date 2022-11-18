@@ -19,7 +19,7 @@ justify-items: center;
 const VideoPresenter = ({video}) => {
 
     return ( 
-      <Link to={`/${video.id.videoId}`} key={video.id.videoId}>
+      <Link to={`/${video.id.videoId}`} key={video.id.videoId} video={video}>
         <Panel style={{backgroundColor: `${colorArray[Math.floor(Math.random()*colorArray.length)]}`}}>
             <img src={video.snippet.thumbnails.high.url} height={video.snippet.thumbnails.high.height} width={video.snippet.thumbnails.high.width} alt=''/>
             <h5>{video.snippet.title} </h5>

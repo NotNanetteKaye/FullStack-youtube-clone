@@ -14,12 +14,12 @@ import VideoPage from "./pages/VideoPage/VideoPage";
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import SearchBar from "./components/SearchBar/SearchBar";
+import VideoMapper from "./components/VideoMapper/VideoMapper";
+
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
 import { useState } from "react";
-import VideoMapper from "./components/VideoMapper/VideoMapper";
-
 
 function App() {
   const [currentVideoID, setCurrentVideoID] = useState("WPiEbYSF9kE");
@@ -328,7 +328,6 @@ function App() {
   return (
     <div>
       <Navbar/>
-      <SearchBar GetResults={GetResults} inputHandler={inputHandler} inputText={inputText}/>
       <Routes>
         <Route
           path="/"
@@ -338,10 +337,11 @@ function App() {
             </PrivateRoute>
           }
         />
-        <Route path="/:videoId/" element={<VideoPage/>}/>
+        <Route path="/:videoId/" element={<VideoPage/>} setSearchResults={setSearchResults}/>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
+      <SearchBar GetResults={GetResults} inputHandler={inputHandler} inputText={inputText}/>
       <VideoMapper searchResults={searchResults} setCurrentVideoID={setCurrentVideoID}/>
       <Footer />
     </div>
