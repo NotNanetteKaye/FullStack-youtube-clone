@@ -1,5 +1,5 @@
 // General Imports
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import { API_KEY } from "./API_KEYS/API_KEY1";
 import axios from "axios";
@@ -20,9 +20,10 @@ import PrivateRoute from "./utils/PrivateRoute";
 import { useState } from "react";
 import VideoMapper from "./components/VideoMapper/VideoMapper";
 
+
 function App() {
   const [currentVideoID, setCurrentVideoID] = useState("WPiEbYSF9kE");
-  const [inputText, setInputText] = useState("WPiEbYSF9kE");
+  const [inputText, setInputText] = useState('');
   const [searchResults, setSearchResults] = useState([
     {
       kind: "youtube#searchResult",
@@ -322,25 +323,12 @@ function App() {
     }
   };
 
-  const GetRelatedVideos = async () => {
-    try {
-      let response = await axios.get(
-        `https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${currentVideoID}&type=video&key=${API_KEY}`
-      );
-      setSearchResults(response.data.items);
-    } catch (error) {
-      console.log(error.response.data);
-    }
-  };
+
 
   return (
     <div>
       <Navbar/>
       <SearchBar GetResults={GetResults} inputHandler={inputHandler} inputText={inputText}/>
-      <Link to={`/${currentVideoID}`}>
-        <VideoMapper searchResults={searchResults} />
-      </Link>
-
       <Routes>
         <Route
           path="/"
@@ -350,10 +338,11 @@ function App() {
             </PrivateRoute>
           }
         />
-        <Route path="/:videoId/" element={<VideoPage/>} GetRelatedVideos={GetRelatedVideos}/>
+        <Route path="/:videoId/" element={<VideoPage/>}/>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
+      <VideoMapper searchResults={searchResults} setCurrentVideoID={setCurrentVideoID}/>
       <Footer />
     </div>
   );
