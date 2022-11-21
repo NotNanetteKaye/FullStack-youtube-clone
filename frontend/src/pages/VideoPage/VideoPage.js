@@ -1,15 +1,15 @@
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { API_KEY } from "../../API_KEYS/API_KEY1";
+import VideoMapper from "../../components/VideoMapper/VideoMapper";
 
-
-const VideoPage = ({video, setSearchResults}) => {
+const VideoPage = ({video, setSearchResults, searchResults}) => {
     const {videoId} = useParams();
 
     const GetRelatedResults = async () => {
         try {
             let response = await axios.get(
-              `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet&relatedToVideoID=${videoId}type=video&maxResults=5`
+              `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet&relatedToVideoId=${videoId}&type=video&maxResults=5`
             );
             setSearchResults(response.data.items);
           } catch (error) {
@@ -19,6 +19,7 @@ const VideoPage = ({video, setSearchResults}) => {
 
     return (
         <div>
+          <button onClick={()=>{GetRelatedResults()}}>Click for Related</button>
             <iframe
                 title= "default-player"
                 id= "player"
@@ -29,8 +30,7 @@ const VideoPage = ({video, setSearchResults}) => {
                 frameBorder='0'
             ></iframe>
             <h2>{videoId}</h2>
-            {/* need to show title and description of video */}
-            {/* videomapper here? */}
+            <VideoMapper searchResults={searchResults} />
 
         </div>
     )

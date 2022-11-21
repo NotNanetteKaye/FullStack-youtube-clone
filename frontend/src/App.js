@@ -337,7 +337,7 @@ function App() {
             </PrivateRoute>
           }
         />
-        <Route path="/:videoId/" element={<VideoPage/>} setSearchResults={setSearchResults}/>
+        <Route path="/:videoId/" element={<VideoPage searchResults={searchResults} setSearchResults={setSearchResults}/>} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>

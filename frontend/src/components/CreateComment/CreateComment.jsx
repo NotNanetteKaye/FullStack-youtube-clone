@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import useAuth from '../../hooks/useAuth';
 
 const createComment = () => {
     const [videoID, setVideoID] = useState('')
     const [comment, setComment] = useState('')
-    const [likes, setLikes] = useState(0)
-    const [dislikes, setDislikes] = useState(0)
+    const [user, token] = useAuth()
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         let newComment = {
-            videoID: videoID,
-            // text: comment,
-            likes: likes,
-            dislikes: dislikes,
+            video_id: videoID,
+            text: comment,
+            likes: 0,
+            dislikes: 0,
+            user_id: user.id
         };
         try {
             const response = await axios.post(url, newComment);
@@ -25,6 +27,15 @@ const createComment = () => {
 
     return(
        <div>
+        <form onSubmit={handleSubmit}>
+            <label>Video ID</label>
+            <input type='string' value={videoID} onChange={(e) => setVideoID(e.target.value)}/>
+            <label>Comment</label>
+            <input type='string' value={comment} onChange={(e) => setComment(e.target.value)}/>
+            <label>User</label>
+            <input type='number' step='1' onChange={(e) => token(e.target.value)}/>
+            <button>Create Comment</button>
+        </form>
        </div> 
     )
 }
