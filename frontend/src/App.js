@@ -15,6 +15,7 @@ import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import SearchBar from "./components/SearchBar/SearchBar";
 import VideoMapper from "./components/VideoMapper/VideoMapper";
+import CreateComment from "./components/CreateComment/CreateComment";
 
 
 // Util Imports
@@ -343,6 +344,7 @@ function App() {
       </Routes>
       <SearchBar GetResults={GetResults} inputHandler={inputHandler} inputText={inputText}/>
       <VideoMapper searchResults={searchResults} setCurrentVideoID={setCurrentVideoID}/>
+      <createComment />
       <Footer />
     </div>
   );

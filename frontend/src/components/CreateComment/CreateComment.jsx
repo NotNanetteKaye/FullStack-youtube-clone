@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import useAuth from '../../hooks/useAuth';
+const url = 'http://127.0.0.1:8000/api/comments/'
 
-const createComment = () => {
+const CreateComment = () => {
     const [videoID, setVideoID] = useState('')
     const [comment, setComment] = useState('')
     const [user, token] = useAuth()
@@ -39,3 +40,5 @@ const createComment = () => {
        </div> 
     )
 }
+
+export default CreateComment
