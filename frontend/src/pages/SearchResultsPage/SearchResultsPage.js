@@ -1,12 +1,5 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
 
-let searchValues = {
-    q: '',
-}
 
-const SearchResultsPage = () => {
+const SearchResultsPage = () => {};
 
-}
-
-export default SearchResultsPage
+export default SearchResultsPage;

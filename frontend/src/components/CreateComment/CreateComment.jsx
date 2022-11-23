@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import useAuth from '../../hooks/useAuth';
 const url = 'http://127.0.0.1:8000/api/comments/'
@@ -20,7 +20,7 @@ const CreateComment = () => {
         };
         try {
             const response = await axios.post(url, newComment, {headers: {Authorization: "Bearer" + token}});
-            console.log(response.data);
+            console.log(newComment);
         } catch (error) {
             console.log(error.response);
         }
@@ -29,13 +29,13 @@ const CreateComment = () => {
     return(
        <div>
         <form onSubmit={handleSubmit}>
-            <label>Video ID</label>
-            <input type='string' value={videoID} onChange={(e) => setVideoID(e.target.value)}/>
-            <label>Comment</label>
-            <input type='string' value={comment} onChange={(e) => setComment(e.target.value)}/>
-            <label>User</label>
-            <input type='number' step='1' onChange={(e) => token(e.target.value)}/>
-            <button>Create Comment</button>
+            <div>
+                <input type='text' value={comment} onChange={(e) => setComment(e.target.value)}/>
+
+            </div>
+            <div>
+                <button type='submit'>Submit Comment</button>
+            </div>
         </form>
        </div> 
     )
