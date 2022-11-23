@@ -1,8 +1,9 @@
 import { useNavigate, useParams } from "react-router-dom";
 import CreateComment from "../../components/CreateComment/CreateComment";
+import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 
 const VideoPage = () => {
-    const {videoId} = useParams();
+    const {videoID} = useParams();
 
     let navigate = useNavigate();
     const goToSearchPage = () => {
@@ -13,7 +14,8 @@ const VideoPage = () => {
     return (
         <div>
           <button onClick={goToSearchPage}>Go to Search Page</button>
-          <CreateComment videoID = {videoId} />
+          <VideoPlayer currentVideoID={videoID}/>
+          <CreateComment videoID = {videoID} />
         </div>
     )
 }
