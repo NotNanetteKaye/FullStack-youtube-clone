@@ -13,7 +13,7 @@ const VideoPage = () => {
     return (
         <div>
           <button onClick={goToSearchPage}>Go to Search Page</button>
-          <CreateComment video = {videoId} />
+          <CreateComment videoID = {videoId} />
         </div>
     )
 }
