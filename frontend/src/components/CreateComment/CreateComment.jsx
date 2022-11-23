@@ -19,7 +19,7 @@ const CreateComment = () => {
             user_id: user.id
         };
         try {
-            const response = await axios.post(url, newComment);
+            const response = await axios.post(url, newComment, {headers: {Authorization: "Bearer" + token}});
             console.log(response.data);
         } catch (error) {
             console.log(error.response);
