@@ -14,7 +14,7 @@ const VideoPage = () => {
     return (
         <div>
           <button onClick={goToSearchPage}>Go to Search Page</button>
-          <VideoPlayer currentVideoID={videoID}/>
+          <VideoPlayer currentVideo = {videoID}/>
           <CreateComment videoID = {videoID} />
         </div>
     )
