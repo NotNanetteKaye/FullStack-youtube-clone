@@ -30,7 +30,7 @@ function App() {
             </PrivateRoute>
           }
         />
-        <Route path="/videopage/:videoId/" element={<VideoPage/>} />
+        <Route path="/:videoId/" element={<VideoPage/>} />
         <Route path="/register" element={<RegisterPage/>} />
         <Route path="/login" element={<LoginPage/>} />
         <Route path="/searchpage" element={<SearchResultsPage/>} />

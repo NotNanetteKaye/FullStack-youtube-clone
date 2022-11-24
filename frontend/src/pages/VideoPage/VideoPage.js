@@ -5,24 +5,23 @@ import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import SeeComments from "../../components/SeeComments/SeeComments";
 
 const VideoPage = () => {
-    const {videoID} = useParams();
+  const { video } = useParams();
 
-    let navigate = useNavigate();
-    const goToSearchPage = () => {
-      let path = '/searchpage';
-      navigate(path);
-    }
+  let navigate = useNavigate();
+  const goToSearchPage = () => {
+    let path = "/searchpage";
+    navigate(path);
+  };
 
-    return (
-        <div>
-          <button onClick={goToSearchPage}>Go to Search Page</button>
-          <VideoPlayer currentVideo = {videoID}/>
-          <GetRelatedVideos videoID = {videoID}/>
-          <CreateComment videoID = {videoID}/>
-          <SeeComments videoID={videoID}/>
-        </div>
-    )
-}
-
+  return (
+    <div>
+      <button onClick={goToSearchPage}>Go to Search Page</button>
+      <VideoPlayer currentVideo={video} />
+      {/* <GetRelatedVideos videoID={video} />
+      <CreateComment videoID={video} />
+      <SeeComments videoID={video} /> */}
+    </div>
+  );
+};
 
 export default VideoPage;
