@@ -4,7 +4,7 @@ import useAuth from '../../hooks/useAuth';
 import VideoMapper from '../../components/VideoMapper/VideoMapper';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import {API_KEY} from '../../API_KEYS/API_KEY1';
-import { Link } from 'react-router-dom';
+import './SearchResultsPage.css'
 
 
 const SearchResultsPage = () => {
@@ -12,9 +12,10 @@ const SearchResultsPage = () => {
     const [user, token] = useAuth();
     const [videos, setVideos] = useState([])
 
-    const getVideos = async (videoTitle = 'recess therapy') => {
+    const getVideos = async () => {
         try{
-            let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&q=${videoTitle}&part=snippet&maxResults=10`
+            let response = await axios.get(
+                `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&q=${videos}&part=snippet&maxResults=10`
             );
             setVideos(response.data.items);
             console.log(response.data)
@@ -35,18 +36,8 @@ const SearchResultsPage = () => {
 
     return (
         <div>
-            <SearchBar getVideos = {getVideos} />
-            <div>
-            {videos.map((video, index) => {
-                return(
-                <Link to={`/videopage/${video.id.videoId}`}>
-                    <div className='column' key = {index}>{video.snippet ?  <img className = 'thumbnail' src={video.snippet.thumbnails.default.url} onClick={ () => getVideo(video)}></img> : null}    
-                    </div>
-                </Link>
-                )
-            })}    
-            </div>
-
+            <SearchBar getVideos = {getVideos} />  
+            <VideoMapper relatedVideos={videos} />
         </div>
     )
 };

@@ -8,10 +8,10 @@ display: flex;
 flex-wrap: wrap;
 `
 
-const VideoMapper = ({searchResults}) => {
+const VideoMapper = ({relatedVideos}) => {
     return ( 
         <FlexContainer>
-                {searchResults.map(e => <VideoPresenter key={e.id.videoId} video={e}/>)}
+                {relatedVideos.map(e => <VideoPresenter key={e.id.videoId} video={e}/>)}
         </FlexContainer>
     );
 }
