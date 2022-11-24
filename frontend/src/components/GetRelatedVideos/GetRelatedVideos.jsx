@@ -18,7 +18,8 @@ const GetRelatedVideos = () => {
 
     return (
         <div>
-
+          <button onClick={()=>{GetRelatedResults()}}>Click for Related Videos!</button>
+          <VideoMapper relatedVideos={relatedVideos} />
         </div>
     )
 }
