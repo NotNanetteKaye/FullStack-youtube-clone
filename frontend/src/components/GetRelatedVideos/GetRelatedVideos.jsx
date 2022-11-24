@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import VideoMapper from '../VideoMapper/VideoMapper'
+import { API_KEY } from '../../API_KEYS/API_KEY1'
 
 const GetRelatedVideos = ({videoID}) => {
 

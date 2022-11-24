@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import useAuth from '../../hooks/useAuth';
 import VideoMapper from '../../components/VideoMapper/VideoMapper';
 import SearchBar from '../../components/SearchBar/SearchBar';
-import {API_KEY} from './API_KEYS/API_KEY1'
+import {API_KEY} from '../../API_KEYS/API_KEY1';
+import { Link } from 'react-router-dom';
 
 
 const SearchResultsPage = () => {

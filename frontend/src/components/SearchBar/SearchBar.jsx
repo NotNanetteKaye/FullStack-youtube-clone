@@ -1,6 +1,9 @@
-import './SearchBar.css'
+import React, { useState } from 'react';
+
 
 const SearchBar = ({getVideos}) => {
+
+  const [inputText, setInputText] = useState('');
 
   let inputHandler = (e) => {
     const lowerCase = e.target.value.toLowerCase();

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { API_KEY } from './API_KEYS/API_KEY1';
+import { API_KEY } from '../../API_KEYS/API_KEY1';
 
 const VideoPlayer = ({currentVideo}) => {
 
