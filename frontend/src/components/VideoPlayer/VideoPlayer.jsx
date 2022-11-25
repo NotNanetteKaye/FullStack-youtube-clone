@@ -13,13 +13,13 @@ const VideoPlayer = ({ currentVideo }) => {
     setTitle(response.data.items[0].snippet.title);
     console.log(response.data);
     setDescription(response.data.items[0].snippet.description);
-  }, [currentVideo])
+  }, [{currentVideo}])
 
   return (
     <div>
       <iframe
-        className="video"
-        id="ytplayer"
+        title= "default-player"
+        id="player"
         type="text/html"
         width="640"
         height="360"
@@ -27,7 +27,6 @@ const VideoPlayer = ({ currentVideo }) => {
         frameBorder="0"
       ></iframe>
       <div>
-        {' '}
         <h2>Title: {title}</h2>
       </div>
       <div>
