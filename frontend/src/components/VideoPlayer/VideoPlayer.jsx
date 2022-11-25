@@ -8,17 +8,17 @@ const VideoPlayer = ({ currentVideo }) => {
 
   useEffect(async () => {
     let response = await axios.get(
-        `https://www.googleapis.com/youtube/v3/videos?key=${API_KEY}&part=snippet&id=${currentVideo}`
+      `https://www.googleapis.com/youtube/v3/videos?key=${API_KEY}&part=snippet&id=${currentVideo}`
     );
     setTitle(response.data.items[0].snippet.title);
     console.log(response.data);
     setDescription(response.data.items[0].snippet.description);
-  }, [{currentVideo}])
+  }, [{ currentVideo }]);
 
   return (
     <div>
       <iframe
-        title= "default-player"
+        title="default-player"
         id="player"
         type="text/html"
         width="640"
