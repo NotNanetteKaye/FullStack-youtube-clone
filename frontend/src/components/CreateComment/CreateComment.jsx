@@ -20,7 +20,7 @@ const CreateComment = ({ videoID }) => {
         "http://127.0.0.1:8000/api/comments/",
         newComment,
         {
-          headers: { Authorization: "Bearer" + token },
+          headers: {Authorization: "Bearer " + token},
         }
       );
       console.log(response.data);
@@ -40,7 +40,7 @@ const CreateComment = ({ videoID }) => {
           />
         </div>
         <div>
-          <button type="submit" onClick={() => response()}>
+          <button type="submit">
             Submit Comment
           </button>
         </div>
