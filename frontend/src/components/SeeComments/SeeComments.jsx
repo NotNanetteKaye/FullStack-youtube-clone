@@ -22,17 +22,16 @@ const SeeComments = ({videoID}) => {
             };
         }
         getComments();
-    }, []);
+    }, [{videoID}]);
 
     return(
         <div>
         {comments.map((comment,index) => {
             return(
               <div>
-                <div key={index}> Name: {comment.user.username}</div> 
-                <div> Text: {comment.text} </div>
-                <div>Likes:{comment.likes} </div>
-                <div> Dislikes:{comment.dislikes}</div>
+                <h1>COMMENTS</h1>
+                <div key={index}> Name: {user.username}</div> 
+                <div> Comment: {comment.text} </div>
               </div>      
                 
             )          
