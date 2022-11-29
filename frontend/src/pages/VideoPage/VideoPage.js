@@ -17,9 +17,9 @@ const VideoPage = () => {
     <div>
       <button onClick={goToSearchPage}>Go to Search Page</button>
       <VideoPlayer currentVideo={video} />
-      <GetRelatedVideos videoID={video} />
       <CreateComment videoID={video} />
-      <SeeComments videoID={video} /> 
+      <SeeComments videoID={video} />
+      <GetRelatedVideos videoID={video} /> 
     </div>
   );
 };

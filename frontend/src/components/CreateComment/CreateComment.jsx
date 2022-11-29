@@ -9,11 +9,10 @@ const CreateComment = ({ videoID }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     let newComment = {
-      video_id: { videoID },
+      video_id:  videoID ,
       text: comment,
       likes: 0,
       dislikes: 0,
-      user_id: user.id,
     };
     try {
       const response = await axios.post(
@@ -23,7 +22,7 @@ const CreateComment = ({ videoID }) => {
           headers: {Authorization: "Bearer " + token},
         }
       );
-      console.log(response.data);
+      console.log(newComment);
     } catch (error) {
       console.log(error.response);
     }

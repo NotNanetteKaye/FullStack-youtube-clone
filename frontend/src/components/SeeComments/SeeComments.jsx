@@ -28,7 +28,7 @@ const SeeComments = ({videoID}) => {
         <div>
         {comments.map((comment,index) => {
             return(
-              <div className="comment-border">
+              <div>
                 <div key={index}> Name: {comment.user.username}</div> 
                 <div> Text: {comment.text} </div>
                 <div>Likes:{comment.likes} </div>
